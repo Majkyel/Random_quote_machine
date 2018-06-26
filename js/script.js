@@ -9,12 +9,14 @@ function getQuote() {
         .then(function (resp) {
             return resp.json();    
         })
+                
         .then(createTweet);
 }
 
 function createTweet(input) {
     
-    if(Array.isArray(input)) {   
+        if(!Array.isArray(input)) {alert('ERROR!');};  
+    
         var data = input[0];
         var dataElement = document.createElement('div');
         dataElement.innerHTML = data.content;
@@ -36,9 +38,6 @@ function createTweet(input) {
             document.querySelector('.author').innerHTML = 'Author : ' + quoteAuthor;
             document.querySelector('.tweet').setAttribute('href', tweet);
         }
-    } else {
-        console.log('ERROR');
-    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
