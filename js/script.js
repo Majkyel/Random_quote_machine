@@ -13,27 +13,31 @@ function getQuote() {
 }
 
 function createTweet(input) {
-    var data = input[0];
     
-    var dataElement = document.createElement('div');
-    dataElement.innerHTML = data.content;
-    
-    var quoteText = dataElement.innerText.trim();
-    var quoteAuthor = data.title;
-    
-    if (!quoteAuthor.length) {
-        quoteAuthor = 'Unkown author';
-    }
-    
-    var tweetText = 'Quote of the day: ' + quoteText + ' Author: ' + quoteAuthor;
-    
-    if (tweetText.length > 140) {
-        getQuote();
+    if(Array.isArray(input)) {   
+        var data = input[0];
+        var dataElement = document.createElement('div');
+        dataElement.innerHTML = data.content;
+
+        var quoteText = dataElement.innerText.trim();
+        var quoteAuthor = data.title;
+
+        if (!quoteAuthor.length) {
+            quoteAuthor = 'Unkown author';
+        }
+
+        var tweetText = 'Quote of the day: ' + quoteText + ' Author: ' + quoteAuthor;
+
+        if (tweetText.length > 140) {
+            getQuote();
+        } else {
+            var tweet = tweetLink + encodeURIComponent(tweetText);
+            document.querySelector('.quote').innerHTML = quoteText;
+            document.querySelector('.author').innerHTML = 'Author : ' + quoteAuthor;
+            document.querySelector('.tweet').setAttribute('href', tweet);
+        }
     } else {
-        var tweet = tweetLink + encodeURIComponent(tweetText);
-        document.querySelector('.quote').innerHTML = quoteText;
-        document.querySelector('.author').innerHTML = 'Author : ' + quoteAuthor;
-        document.querySelector('.tweet').setAttribute('href', tweet);
+        console.log('ERROR');
     }
 }
 
