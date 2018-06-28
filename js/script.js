@@ -8,14 +8,16 @@ function getQuote() {
     fetch(prefix + quoteUrl, { cache: 'no-store'})
         .then(function (resp) {
             return resp.json();    
-        })
-                
+        })         
         .then(createTweet);
 }
 
 function createTweet(input) {
     
-        if(!Array.isArray(input)) {alert('ERROR!');};  
+        if(!Array.isArray(input)) {
+            alert('ERROR!');
+            return;
+        };  
     
         var data = input[0];
         var dataElement = document.createElement('div');
