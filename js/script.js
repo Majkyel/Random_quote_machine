@@ -14,8 +14,7 @@ function getQuote() {
 
 function createTweet(input) {
     
-        if(!Array.isArray(input)) {
-            alert('ERROR!');
+        if (!Array.isArray(input) && input.length == 0) {
             return;
         };  
     
