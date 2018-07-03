@@ -13,8 +13,8 @@ function getQuote() {
 }
 
 function createTweet(input) {
-    
-        if (!Array.isArray(input) && input.length == 0) {
+
+        if (!Array.isArray(input) && !input.length) {
             return;
         };  
     
