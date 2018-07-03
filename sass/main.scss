@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: dodgerblue;
+    main {
+        text-align: center;
+        header {
+            font-family: 'Galada', cursive; 
+            font-size: 40px;
+        }
+        .box {
+            border: 2px solid black;
+            box-shadow: inset 0 0 15px #000;
+            max-width: 1200px;
+            margin: auto;
+            background-color: wheat;
+            padding: 10px;
+            min-height: 110px;
+            margin-bottom: 15px;
+            .quote {
+                font-style: italic;
+            }
+        }
+        .buttons {
+            padding: 10px;
+            max-width: 300px;
+            margin: auto;
+            .trigger {
+                width: 100%;
+                padding: 9px;
+                margin-bottom: 10px;
+                font-size: 20px;
+                border-radius: 10px;
+                background-color: darkgreen;
+                border: 2px solid black;
+                cursor: pointer;
+                color: white;
+            }
+            .tweet {
+                display: block;
+                color: white;
+                border: 2px solid white;
+                text-decoration: none;
+                border-radius: 10px;
+                background-color: 1da1f2;
+                padding: 5px;
+                font-size: 20px;
+            }
+        }
+    }
+}
